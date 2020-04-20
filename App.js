@@ -6,7 +6,8 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { Component } from 'react';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -29,21 +30,34 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // import { RootNaviagtion } from './navigation/RootNavigation';
 
-const App: () => React$Node = () => {
+class App extends Component {
 
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <View>
-  {/* <CountryInput/> */}
-  <DetailsScreen/>
- 
- {/* <RootNaviagtion/> */}
-        </View>
-      </SafeAreaView>
-    </>
-  );
+
+  state = {
+    activeScreen: 'input',
+    countryName:""
+  }
+  render() {
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <View>{
+            this.state.activeScreen==="input"? <CountryInput onsubmitPress={(value) => {   
+              this.setState({ activeScreen: "details",countryName:value })
+            }} />:
+            <DetailsScreen countryName={this.state.countryName}  />
+          }
+            
+            
+
+            {/* <RootNaviagtion/> */}
+          </View>
+        </SafeAreaView>
+      </>
+    );
+  }
+
 };
 
 const styles = StyleSheet.create({

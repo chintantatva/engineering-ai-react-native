@@ -30,13 +30,13 @@ export default class DetailsScreen extends Component {
         const { value } = this.state
         return (
             <View style={{ flex: 1, alignItems: "center" }}>
-                <View style={{flexDirection:"row"}}>
-                <Text>
-                    abc
+                <View style={{ flexDirection: "row" }}>
+                    <Text>
+                        abc
     </Text>
 
-                <Text>
-value
+                    <Text>
+                        value
     </Text>
 
                 </View>

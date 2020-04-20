@@ -14,10 +14,8 @@ export default class CountryInput extends Component {
         this.setState({ value: text })
     }
 
-    onSubmitPress=()=>{
-        // fetch('https://mywebsite.com/mydata.json');
-        alert("call")
-
+    onSubmitPress=()=>{        
+        this.props.onsubmitPress(this.state.value)
     }
 
     render() {
