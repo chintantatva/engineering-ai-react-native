@@ -12,11 +12,11 @@ export default class DetailsScreen extends Component {
 
     async componentDidMount() {
         let countryData = await this.getCountryFromApi();
+        this.setState({countryData:countryData})
 
     }
 
     getCountryFromApi() {
-        
         return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
             .then((response) => response.json())
             .then((json) => {
@@ -28,16 +28,17 @@ export default class DetailsScreen extends Component {
     }
 
     render() {
-        const { value } = this.state
+        const { countryData } = this.state;
+        console.log("co",countryData)
         return (
             <View style={{ flex: 1, alignItems: "center" }}>
-                <View style={{marginVertical:50,width:"80%",flexDirection:"row"}} >
+                <View style={{marginVertical:50,width:"80%",}} >
                     <Text>
                         capital
     </Text>
 
                     <Text>
-                        value
+                        { ( this.state.countryData&& this.state.countryData.capital)? this.state.countryData.capital:""}
     </Text>
 
                 </View>

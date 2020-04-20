@@ -43,9 +43,9 @@ class App extends Component {
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
           <View>{
-            this.state.activeScreen==="input"? <CountryInput onsubmitPress={(value) => {   
-              this.setState({ activeScreen: "details",countryName:value })
-            }} />:
+            // this.state.activeScreen==="input"? <CountryInput onsubmitPress={(value) => {   
+            //   this.setState({ activeScreen: "details",countryName:value })
+            // }} />:
             <DetailsScreen countryName={this.state.countryName}  />
           }
             {/* <RootNaviagtion/> */}
