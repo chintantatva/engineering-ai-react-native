@@ -17,7 +17,9 @@ export default class DetailsScreen extends Component {
     }
 
     getCountryFromApi() {
-        return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
+        return fetch('https://restcountries.eu/rest/v2/name/'+"india")
+
+        // return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
             .then((response) => response.json())
             .then((json) => {
                 return json[1];
@@ -42,27 +44,37 @@ export default class DetailsScreen extends Component {
     </Text>
 
                 </View>
-                {/* <View>
+                 <View style={{marginVertical:50,width:"80%"}}>
                     <Text>
                     population
     </Text>
 
                     <Text>
-                        value
+                    { ( this.state.countryData&& this.state.countryData.population)? this.state.countryData.population:""}
+                    
     </Text>
                 </View>
-                <View>
+                <View style={{marginVertical:50,width:"80%"}} >
                     <Text>
-                    latlng
+                    lat
     </Text>
 
                     <Text>
-                        value
+                    { ( this.state.countryData&& this.state.countryData.latlang)? this.state.countryData.latlang[0]:""}
     </Text>
                 </View>
                 
-                 */}
+                <View style={{marginVertical:50,width:"80%"}} >
+                    <Text>
+                    lng
+    </Text>
 
+                    <Text>
+                    { ( this.state.countryData&& this.state.countryData.latlang)? this.state.countryData.latlang[1]:""}
+
+    </Text>
+                </View>
+                
             </View>
 
         );
