@@ -17,9 +17,9 @@ export default class DetailsScreen extends Component {
     }
 
     getCountryFromApi() {
-        return fetch('https://restcountries.eu/rest/v2/name/'+"india")
+        // return fetch('https://restcountries.eu/rest/v2/name/'+"india")
 
-        // return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
+        return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
             .then((response) => response.json())
             .then((json) => {
                 return json[1];
