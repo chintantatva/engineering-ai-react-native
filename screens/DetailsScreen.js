@@ -16,7 +16,8 @@ export default class DetailsScreen extends Component {
     }
 
     getCountryFromApi() {
-        return fetch('https://restcountries.eu/rest/v2/name/india')
+        
+        return fetch('https://restcountries.eu/rest/v2/name/'+this.props.countryName)
             .then((response) => response.json())
             .then((json) => {
                 return json[1];
@@ -30,9 +31,9 @@ export default class DetailsScreen extends Component {
         const { value } = this.state
         return (
             <View style={{ flex: 1, alignItems: "center" }}>
-                <View style={{ flexDirection: "row" }}>
+                <View style={{marginVertical:50,width:"80%",flexDirection:"row"}} >
                     <Text>
-                        abc
+                        capital
     </Text>
 
                     <Text>
@@ -40,12 +41,26 @@ export default class DetailsScreen extends Component {
     </Text>
 
                 </View>
-                <View>
+                {/* <View>
+                    <Text>
+                    population
+    </Text>
+
+                    <Text>
+                        value
+    </Text>
                 </View>
                 <View>
+                    <Text>
+                    latlng
+    </Text>
+
+                    <Text>
+                        value
+    </Text>
                 </View>
-                <View>
-                </View>
+                
+                 */}
 
             </View>
 

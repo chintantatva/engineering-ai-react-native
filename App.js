@@ -48,9 +48,6 @@ class App extends Component {
             }} />:
             <DetailsScreen countryName={this.state.countryName}  />
           }
-            
-            
-
             {/* <RootNaviagtion/> */}
           </View>
         </SafeAreaView>
